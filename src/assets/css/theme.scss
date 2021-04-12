@@ -1,0 +1,26 @@
+$colors: ( //
+  blue: (base:#3498db),
+  white:(base:#ecf0f1, deep:#aaaaaa),
+  indigo:(base:#34495e),
+  yellow:(base:#f1c40f),
+);
+
+@function theme($color, $type: 'base', $map: $colors) {
+  @if (map-has-key($map, $color)) {
+    $value: map-get($map, $color);
+
+    @if type-of($value)==color {
+      @return $value;
+    }
+
+    @if (map-has-key($value, $type)) {
+      $value: map-get($value, $type);
+
+      @if type-of($value)==color {
+        @return $value;
+      }
+    }
+  }
+
+  @return null;
+}
