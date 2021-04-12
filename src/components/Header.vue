@@ -1,45 +1,31 @@
 <template>
   <div id="header">
-    <div class="home">
+    <div class="content">
       <div class="logo">
-        <img src="@/assets/img/logo.png" />
+        <img class="img" src="@/assets/img/logo.png" />
+        <span class="text">
+          <div class="line-one">Calico & MooMoo</div>
+          <div class="line-two">Minecarft Server</div>
+        </span>
       </div>
-      <div class="title">
-        <div class="line-one">Calico & MooMoo</div>
-        <div class="line-two">Minecarft Server</div>
-      </div>
-    </div>
-    <div class="menu">
-      <div class="vert-align-mid"></div>
-      <div class="option">
-        <Downloads></Downloads>
-        <div class="text">DOWNLOADS</div>
-      </div>
-      <div class="option">
-        <Mods></Mods>
-        <div class="text">MODS</div>
-      </div>
-      <div class="option">
-        <QA></QA>
-        <div class="text">Q&A</div>
-      </div>
-    </div>
-    <div class="menu-mobile">
-      <div class="vert-align-mid"></div>
-      <Menu @click="toggleMenu"></Menu>
-      <div v-if="state.showMenu" class="option-list">
+      <div v-if="state.showMenu" class="menu">
+        <div class="vert-align-mid"></div>
         <div class="option">
-          <Downloads></Downloads>
+          <Downloads class="icon"></Downloads>
           <div class="text">DOWNLOADS</div>
         </div>
         <div class="option">
-          <Mods></Mods>
+          <Mods class="icon"></Mods>
           <div class="text">MODS</div>
         </div>
         <div class="option">
-          <QA></QA>
+          <QA class="icon"></QA>
           <div class="text">Q&A</div>
         </div>
+      </div>
+      <div class="menu-btn">
+        <div class="vert-align-mid"></div>
+        <Menu class="icon" @click="toggleMenu"></Menu>
       </div>
     </div>
   </div>
@@ -57,11 +43,11 @@ export default defineComponent({
   components: { Downloads, Mods, QA, Menu },
   setup() {
     const state = reactive({
-      showMenu: false,
+      showMenu: window.innerWidth > 767,
     });
 
     const resize = () => {
-      state.showMenu = false;
+      state.showMenu = window.innerWidth > 767;
     };
 
     onMounted(() => {
@@ -89,145 +75,103 @@ export default defineComponent({
 
 #header {
   position: fixed;
-  top: 0;
+  top: 20px;
   right: 0;
   left: 0;
   height: 80px;
+  text-align: center;
   background-color: theme(blue);
+  z-index: 999;
 
-  @include breakpoint(s) {
+  @include breakpoint(m) {
+    top: 0;
     height: 60px;
   }
 
-  .home {
-    float: left;
-    margin-left: 100px;
+  .content {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    width: calc(100% - 20px);
     height: 100%;
-    cursor: pointer;
-
-    @include breakpoint(l) {
-      margin-left: 15px;
-    }
-
-    @include breakpoint(s) {
-      margin-left: 10px;
-    }
-
-    .logo,
-    .title {
-      display: inline-block;
-    }
+    max-width: 1200px;
 
     .logo {
+      float: left;
       height: 100%;
-      vertical-align: middle;
 
-      img {
+      .img,
+      .text {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .img {
         margin: 10px 0;
         height: calc(100% - 20px);
       }
-    }
 
-    .title {
-      margin-left: 15px;
-      font-size: 26px;
-      font-weight: bold;
-      font-style: italic;
-      color: theme(white);
-      vertical-align: middle;
+      .text {
+        margin-left: 15px;
+        font-size: 26px;
+        font-weight: bold;
+        font-style: italic;
+        text-align: left;
+        color: theme(white);
 
-      @include breakpoint(s) {
-        font-size: 20px;
+        .line-two {
+          margin-left: 20px;
+        }
+
+        @include breakpoint(m) {
+          font-size: 22px;
+        }
       }
-
-      .line-two {
-        margin-left: 20px;
-      }
-    }
-  }
-
-  .menu {
-    float: right;
-    margin-right: 100px;
-    height: 100%;
-
-    @include breakpoint(l) {
-      margin-right: 15px;
     }
 
-    @include breakpoint(m) {
-      display: none;
-    }
+    .menu {
+      float: right;
+      height: 100%;
 
-    .option {
-      display: inline-block;
-      margin-left: 50px;
-      color: theme(indigo);
-      vertical-align: middle;
-      cursor: pointer;
+      @include breakpoint(m) {
+        position: absolute;
+        top: 100%;
+        right: -10px;
+        width: 299px;
+        height: calc(100vh - 60px);
+        text-align: left;
+        background-color: theme(white);
 
-      @include breakpoint(l) {
-        margin-left: 20px;
-      }
-
-      &:hover {
-        .text {
-          color: theme(yellow);
+        .vert-align-mid {
+          display: none;
         }
       }
 
-      svg {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        vertical-align: middle;
-      }
-
-      .text {
-        display: inline-block;
-        margin-left: 5px;
-        font-size: 26px;
-        font-weight: bold;
-        color: theme(white);
-        vertical-align: middle;
-      }
-    }
-  }
-
-  .menu-mobile {
-    display: none;
-    position: relative;
-    float: right;
-    margin-right: 10px;
-    height: 100%;
-
-    @include breakpoint(m) {
-      display: block;
-    }
-
-    svg {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      color: theme(indigo);
-      vertical-align: middle;
-      cursor: pointer;
-    }
-
-    .option-list {
-      position: absolute;
-      top: 100%;
-      right: -10px;
-      background-color: theme(white);
-      border: 1px solid theme(white, deep);
-      border-radius: 4px;
-
       .option {
-        padding: 5px 8px;
-        white-space: nowrap;
+        display: inline-block;
+        margin-left: 80px;
+        color: theme(indigo);
+        vertical-align: middle;
         cursor: pointer;
 
-        svg {
+        &:hover {
+          .text {
+            color: theme(yellow);
+          }
+        }
+
+        @include breakpoint(l) {
+          margin-left: 30px;
+        }
+
+        @include breakpoint(m) {
+          display: block;
+          margin-left: 0;
+          padding: 10px 15px;
+          border-bottom: 1px solid theme(white, deep);
+        }
+
+        .icon {
           display: inline-block;
           width: 40px;
           height: 40px;
@@ -239,9 +183,32 @@ export default defineComponent({
           margin-left: 5px;
           font-size: 26px;
           font-weight: bold;
-          color: theme(indigo);
+          color: theme(white);
           vertical-align: middle;
+
+          @include breakpoint(m) {
+            color: theme(indigo);
+          }
         }
+      }
+    }
+
+    .menu-btn {
+      display: none;
+      float: right;
+      height: 100%;
+
+      @include breakpoint(m) {
+        display: block;
+      }
+
+      .icon {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        color: theme(indigo);
+        vertical-align: middle;
+        cursor: pointer;
       }
     }
   }

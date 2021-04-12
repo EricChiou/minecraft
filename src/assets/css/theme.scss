@@ -1,8 +1,9 @@
 $colors: ( //
   blue: (base:#3498db),
-  white:(base:#ecf0f1, deep:#aaaaaa),
-  indigo:(base:#34495e),
+  white:(base:#ecf0f1, deep:#aaaaaa, light:#ffffff),
+  indigo:(base:#34495e, deep:#151d26),
   yellow:(base:#f1c40f),
+  green:(base:#34aa2f),
 );
 
 @function theme($color, $type: 'base', $map: $colors) {
