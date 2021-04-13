@@ -1,5 +1,5 @@
 <template>
-  <div id="header">
+  <div id="header" :style="state.fix ? { position: 'fixed', top: 0, right: 0, left: 0 } : null">
     <div class="content">
       <div class="logo">
         <img class="img" src="@/assets/img/logo.png" />
@@ -44,18 +44,29 @@ export default defineComponent({
   setup() {
     const state = reactive({
       showMenu: window.innerWidth > 767,
+      fix: false,
     });
 
     const resize = () => {
       state.showMenu = window.innerWidth > 767;
     };
 
+    const scroll = () => {
+      if (document.documentElement.scrollTop > 20) {
+        state.fix = true;
+      } else {
+        state.fix = false;
+      }
+    };
+
     onMounted(() => {
       window.addEventListener('resize', resize);
+      window.addEventListener('scroll', scroll);
     });
 
     onUnmounted(() => {
       window.removeEventListener('resize', resize);
+      window.removeEventListener('scroll', scroll);
     });
 
     const toggleMenu = () => {
@@ -70,21 +81,20 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-@import '@/assets/css/rwd.scss';
+@import '@/assets/css/breakpoint.scss';
 @import '@/assets/css/theme.scss';
 
 #header {
-  position: fixed;
-  top: 20px;
-  right: 0;
-  left: 0;
   height: 80px;
   text-align: center;
   background-color: theme(blue);
   z-index: 999;
 
   @include breakpoint(m) {
+    position: fixed;
     top: 0;
+    right: 0;
+    left: 0;
     height: 60px;
   }
 
@@ -99,6 +109,7 @@ export default defineComponent({
     .logo {
       float: left;
       height: 100%;
+      cursor: pointer;
 
       .img,
       .text {

@@ -1,133 +1,93 @@
 <template>
+  <div class="background"></div>
   <div id="home">
-    <div class="mask"></div>
-    <div class="content">
-      <div class="welcome-container">
-        <div class="welcome-block">
-          <div class="title">
-            <div class="text">歡迎來到 Calico & MooMoo</div>
-            <div class="text">Minecraft 伺服器</div>
-          </div>
-          <div class="get">
-            <button class="get-btn">取得客戶端</button>
-          </div>
-        </div>
-      </div>
+    <Header></Header>
+    <Welcome></Welcome>
+    <br />
+    <br class="margin-top" />
+    <div class="news">
+      <AddUser></AddUser>
+      <div class="separate"></div>
+      <Register></Register>
     </div>
+    <br />
+    <div></div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, reactive } from 'vue';
+
+import Header from '@/components/Header.vue';
+import Welcome from '@/components/Welcome.vue';
+import AddUser from '@/components/AddUser.vue';
+import Register from '@/components/Register.vue';
 
 export default defineComponent({
   name: 'Home',
-  components: {},
+  components: { Header, Welcome, AddUser, Register },
+  setup() {
+    const state = reactive({
+      expand: false,
+    });
+
+    const toggleExpand = () => {
+      state.expand = !state.expand;
+    };
+
+    return {
+      state,
+      toggleExpand,
+    };
+  },
 });
 </script>
 <style lang="scss" scoped>
-@import '@/assets/css/rwd.scss';
+@import '@/assets/css/breakpoint.scss';
 @import '@/assets/css/theme.scss';
+
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('../assets/img/background_1.jpg');
+  background-position: center;
+  background-size: cover;
+}
 
 #home {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../assets/img/background_1.jpg');
-  background-size: cover;
+  padding: 20px 0 100px 0;
+  min-height: calc(100vh - 120px);
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
 
-  .mask {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+  @include breakpoint(m) {
+    padding: 60px 0;
   }
 
-  .content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  .margin-top {
+    @include breakpoint(m) {
+      display: none;
+    }
+  }
 
-    .welcome-container {
-      padding-top: 100px;
-      overflow: auto;
+  .news {
+    display: inline-block;
+    width: calc(100% - 60px);
+    max-width: 1110px;
 
-      @include breakpoint(m) {
-        padding-top: 60px;
-      }
+    @include breakpoint(m) {
+      width: calc(100% - 30px);
+    }
 
-      .welcome-block {
-        display: inline-block;
-        padding: 30px 45px;
-        width: calc(100% - 90px);
-        max-width: 1200px;
-        background-color: theme(indigo, deep);
+    @include breakpoint(s) {
+      width: calc(100% - 20px);
+    }
 
-        @include breakpoint(m) {
-          padding: 20px 30px;
-          width: calc(100% - 60px);
-        }
-
-        @include breakpoint(s) {
-          padding: 10px 15px;
-          width: calc(100% - 30px);
-        }
-
-        .title {
-          font-size: 42px;
-          color: theme(white);
-
-          @include breakpoint(m) {
-            font-size: 30px;
-          }
-
-          @include breakpoint(s) {
-            font-size: 22px;
-          }
-
-          .text {
-            text-align: left;
-            white-space: nowrap;
-          }
-        }
-
-        .get {
-          margin-top: -10px;
-          text-align: right;
-
-          @include breakpoint(m) {
-            margin-top: -15px;
-          }
-
-          @include breakpoint(s) {
-            margin-top: -20px;
-          }
-
-          .get-btn {
-            padding: 10px 15px;
-            font-size: 26px;
-            color: theme(white);
-            background-color: theme(green);
-            border: none;
-            cursor: pointer;
-            box-shadow: 1px 1px 0px 0px theme(white, deep);
-
-            @include breakpoint(m) {
-              padding: 5px 10px;
-              font-size: 20px;
-            }
-
-            @include breakpoint(s) {
-              padding: 3px 5px;
-              font-size: 16px;
-            }
-          }
-        }
-      }
+    .separate {
+      height: 10px;
     }
   }
 }
