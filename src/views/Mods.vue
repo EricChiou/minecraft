@@ -19,8 +19,6 @@
   </div>
 </template>
 <script lang="ts">
-/* eslint-disable max-len */
-/* eslint-disable quotes */
 import { defineComponent } from 'vue';
 
 import Cons from '@/constants';

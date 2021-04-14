@@ -86,7 +86,7 @@ export default defineComponent({
     text-align: left;
 
     .step {
-      margin-top: 15px;
+      margin-top: 10px;
       font-size: 22px;
 
       @include breakpoint(m) {

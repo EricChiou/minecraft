@@ -6,7 +6,7 @@
         <div class="text">Minecraft 伺服器</div>
       </div>
       <div class="get">
-        <button class="get-btn">取得客戶端</button>
+        <a class="get-btn" :href="fileUrl" target="_blank">下載客戶端</a>
       </div>
     </div>
   </div>
@@ -14,8 +14,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+import Cons from '@/constants';
+
 export default defineComponent({
   name: 'Welcome',
+  setup() {
+    return { fileUrl: Cons.CLIENT_FILE_URL };
+  },
 });
 </script>
 <style lang="scss" scoped>
@@ -73,11 +78,12 @@ export default defineComponent({
       .get-btn {
         padding: 10px 15px;
         font-size: 26px;
+        text-decoration: none;
         color: theme(white);
         background-color: theme(green);
         border: none;
-        cursor: pointer;
         box-shadow: 1px 1px 0px 0px theme(white, deep);
+        cursor: pointer;
 
         @include breakpoint(m) {
           padding: 5px 10px;

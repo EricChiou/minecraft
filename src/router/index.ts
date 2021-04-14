@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '@/views/Home.vue';
 import Mods from '@/views/Mods.vue';
 import Map from '@/views/Map.vue';
+import QA from '@/views/QA.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/map',
     name: 'Map',
     component: Map,
+  },
+  {
+    path: '/qa',
+    name: 'QA',
+    component: QA,
   },
 ];
 

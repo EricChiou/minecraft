@@ -3,20 +3,10 @@
     <div class="title" @click="toggleExpand">
       <Shrink v-if="!state.expand" class="icon"></Shrink>
       <Expand v-if="state.expand" class="icon"></Expand>
-      <span class="text">在遊戲中<span style="color: red">註冊</span>玩家名稱</span>
+      <span class="text">如何開始遊戲</span>
     </div>
     <div v-if="state.expand" class="content">
-      <div class="step">
-        第一次進入遊戲時，需輸入 "/register 密碼 確認密碼"，來註冊玩家名稱。<br />
-        e.g. /register 1234 1234
-      </div>
-      <div class="step">
-        <img class="img" src="@/assets/img/register.png" />
-      </div>
-      <div class="step">之後進入遊戲時輸入 "/login 密碼" 進行登入。<br />e.g. /login 1234</div>
-      <div class="step">
-        <img class="img" src="@/assets/img/login.png" />
-      </div>
+      <div class="step">下載客戶端檔案之後解壓縮，執行 Minecraft.exe 即可開始遊戲。</div>
     </div>
   </div>
 </template>
@@ -27,7 +17,7 @@ import Shrink from '@/components/icons/Shrink.vue';
 import Expand from '@/components/icons/Expand.vue';
 
 export default defineComponent({
-  name: 'AddUser',
+  name: 'StartGame',
   components: { Shrink, Expand },
   setup() {
     const state = reactive({

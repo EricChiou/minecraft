@@ -1,47 +1,37 @@
 <template>
   <div class="background"></div>
-  <div id="home">
+  <div id="qa">
     <Header></Header>
-    <Welcome></Welcome>
-    <br />
-    <br class="margin-top" />
-    <div class="fq">
-      <div class="title">常見問題</div>
+    <div class="title">問題與解答</div>
+    <div class="questions">
       <StartGame></StartGame>
       <div class="separate"></div>
       <AddUser></AddUser>
       <div class="separate"></div>
       <Register></Register>
+      <div class="separate"></div>
+      <Lag></Lag>
     </div>
-    <br />
-    <div></div>
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, reactive } from 'vue';
+import { defineComponent } from 'vue';
+
+import Cons from '@/constants';
 
 import Header from '@/components/Header.vue';
-import Welcome from '@/components/Welcome.vue';
 import StartGame from '@/components/StartGame.vue';
 import AddUser from '@/components/AddUser.vue';
 import Register from '@/components/Register.vue';
+import Lag from '@/components/Lag.vue';
 
 export default defineComponent({
-  name: 'Home',
-  components: { Header, Welcome, StartGame, AddUser, Register },
+  name: 'Mods',
+  components: { Header, StartGame, AddUser, Register, Lag },
   setup() {
-    const state = reactive({
-      expand: false,
-    });
+    const mods = Cons.MODS;
 
-    const toggleExpand = () => {
-      state.expand = !state.expand;
-    };
-
-    return {
-      state,
-      toggleExpand,
-    };
+    return { mods };
   },
 });
 </script>
@@ -55,12 +45,12 @@ export default defineComponent({
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url('../assets/img/background_1.jpg');
+  background-image: url('../assets/img/background_4.jpg');
   background-position: center;
   background-size: cover;
 }
 
-#home {
+#qa {
   position: relative;
   padding: 20px 0 100px 0;
   min-height: calc(100vh - 120px);
@@ -71,13 +61,14 @@ export default defineComponent({
     padding: 60px 0;
   }
 
-  .margin-top {
-    @include breakpoint(m) {
-      display: none;
-    }
+  .title {
+    margin: 15px 0 5px 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: theme(white);
   }
 
-  .fq {
+  .questions {
     display: inline-block;
     width: calc(100% - 60px);
     max-width: 1110px;
@@ -88,21 +79,6 @@ export default defineComponent({
 
     @include breakpoint(s) {
       width: calc(100% - 20px);
-    }
-
-    .title {
-      margin-bottom: 5px;
-      font-size: 32px;
-      font-weight: bold;
-      color: theme(white);
-
-      @include breakpoint(m) {
-        font-size: 30px;
-      }
-
-      @include breakpoint(s) {
-        font-size: 28px;
-      }
     }
 
     .separate {

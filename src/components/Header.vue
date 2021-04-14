@@ -24,10 +24,12 @@
             <div class="text">MAP</div>
           </div>
         </router-link>
-        <div class="option">
-          <QA class="icon"></QA>
-          <div class="text">Q&A</div>
-        </div>
+        <router-link to="/qa">
+          <div class="option">
+            <QA class="icon"></QA>
+            <div class="text">Q&A</div>
+          </div>
+        </router-link>
       </div>
       <div class="menu-btn">
         <div class="vert-align-mid"></div>
