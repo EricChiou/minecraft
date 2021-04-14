@@ -1,23 +1,29 @@
 <template>
   <div id="header" :style="state.fix ? { position: 'fixed', top: 0, right: 0, left: 0 } : null">
     <div class="content">
-      <div class="logo">
-        <img class="img" src="@/assets/img/logo.png" />
-        <span class="text">
-          <div class="line-one">Calico & MooMoo</div>
-          <div class="line-two">Minecarft Server</div>
-        </span>
-      </div>
+      <router-link to="/">
+        <div class="logo">
+          <img class="img" src="@/assets/img/logo.png" />
+          <span class="text">
+            <div class="line-one">Calico & MooMoo</div>
+            <div class="line-two">Minecarft Server</div>
+          </span>
+        </div>
+      </router-link>
       <div v-if="state.showMenu" class="menu">
         <div class="vert-align-mid"></div>
-        <div class="option">
-          <Downloads class="icon"></Downloads>
-          <div class="text">DOWNLOADS</div>
-        </div>
-        <div class="option">
-          <Mods class="icon"></Mods>
-          <div class="text">MODS</div>
-        </div>
+        <router-link to="/mods">
+          <div class="option">
+            <Mods class="icon"></Mods>
+            <div class="text">MODS</div>
+          </div>
+        </router-link>
+        <router-link to="/map">
+          <div class="option">
+            <Map class="icon"></Map>
+            <div class="text">MAP</div>
+          </div>
+        </router-link>
         <div class="option">
           <QA class="icon"></QA>
           <div class="text">Q&A</div>
@@ -33,22 +39,22 @@
 <script lang="ts">
 import { defineComponent, reactive, onMounted, onUnmounted } from 'vue';
 
-import Downloads from '@/components/icons/Downloads.vue';
+import Map from '@/components/icons/Map.vue';
 import Mods from '@/components/icons/Mods.vue';
 import QA from '@/components/icons/QA.vue';
 import Menu from '@/components/icons/Menu.vue';
 
 export default defineComponent({
   name: 'Header',
-  components: { Downloads, Mods, QA, Menu },
+  components: { Map, Mods, QA, Menu },
   setup() {
     const state = reactive({
-      showMenu: window.innerWidth > 767,
+      showMenu: window.innerWidth >= 767,
       fix: false,
     });
 
     const resize = () => {
-      state.showMenu = window.innerWidth > 767;
+      state.showMenu = window.innerWidth >= 767;
     };
 
     const scroll = () => {
@@ -172,7 +178,7 @@ export default defineComponent({
         }
 
         @include breakpoint(l) {
-          margin-left: 30px;
+          margin-left: 45px;
         }
 
         @include breakpoint(m) {

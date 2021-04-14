@@ -6,10 +6,10 @@
     width="24px"
     fill="#000000"
   >
-    <path clip-rule="evenodd" d="M0 0h24v24H0z" fill="none" />
+    <path d="M0 0h24v24H0z" fill="none" />
     <path
       fill="currentColor"
-      d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"
+      d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"
     />
   </svg>
 </template>
@@ -17,6 +17,6 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Mods',
+  name: 'Map',
 });
 </script>
