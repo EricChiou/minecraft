@@ -41,7 +41,7 @@ export default defineComponent({
     }
 
     @include breakpoint(s) {
-      padding: 10px 15px;
+      padding: 10px 15px 15px 15px;
       width: calc(100% - 30px);
     }
 
@@ -86,12 +86,12 @@ export default defineComponent({
         cursor: pointer;
 
         @include breakpoint(m) {
-          padding: 5px 10px;
+          padding: 7px 10px;
           font-size: 20px;
         }
 
         @include breakpoint(s) {
-          padding: 3px 5px;
+          padding: 5px 7px;
           font-size: 16px;
         }
       }

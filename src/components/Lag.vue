@@ -6,7 +6,7 @@
       <span class="text">遊戲好 Lag 怎麼辦</span>
     </div>
     <div v-if="state.expand" class="content">
-      <div class="step">為了提高遊戲品質，遊戲預設載入了高畫質材質包以及光影模式。</div>
+      <div class="step">為了增進遊戲體驗，遊戲預設載入了高畫質材質包以及光影模式。</div>
       <div class="step">從遊戲選單 > 選項 > 顯示設定 > 光影 > 選擇關閉 > 完成，即可關閉光影。</div>
       <div class="step">從遊戲選單 > 選項 > 資源包 > 將已選擇材質包移至左方，例如：Soartex_Faver_(8.0.2).zip，即可關閉材質包。</div>
     </div>
