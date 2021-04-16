@@ -11,6 +11,8 @@
       <Register></Register>
       <div class="separate"></div>
       <Lag></Lag>
+      <div class="separate"></div>
+      <Shift></Shift>
     </div>
   </div>
 </template>
@@ -24,10 +26,11 @@ import StartGame from '@/components/StartGame.vue';
 import AddUser from '@/components/AddUser.vue';
 import Register from '@/components/Register.vue';
 import Lag from '@/components/Lag.vue';
+import Shift from '@/components/Shift.vue';
 
 export default defineComponent({
   name: 'Mods',
-  components: { Header, StartGame, AddUser, Register, Lag },
+  components: { Header, StartGame, AddUser, Register, Lag, Shift },
   setup() {
     const mods = Cons.MODS;
 

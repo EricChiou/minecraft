@@ -1,5 +1,5 @@
 <template>
-  <div class="add-user">
+  <div class="register">
     <div class="title" @click="toggleExpand">
       <Shrink v-if="!state.expand" class="icon"></Shrink>
       <Expand v-if="state.expand" class="icon"></Expand>
@@ -27,7 +27,7 @@ import Shrink from '@/components/icons/Shrink.vue';
 import Expand from '@/components/icons/Expand.vue';
 
 export default defineComponent({
-  name: 'AddUser',
+  name: 'Register',
   components: { Shrink, Expand },
   setup() {
     const state = reactive({
@@ -49,7 +49,7 @@ export default defineComponent({
 @import '@/assets/css/breakpoint.scss';
 @import '@/assets/css/theme.scss';
 
-.add-user {
+.register {
   padding: 10px 15px;
   color: theme(indigo);
   background-color: theme(white);
@@ -100,7 +100,7 @@ export default defineComponent({
 
       .img {
         display: block;
-        width: 100%;
+        max-width: 100%;
       }
     }
   }

@@ -1,12 +1,22 @@
 <template>
-  <div class="start-game">
+  <div class="shift">
     <div class="title" @click="toggleExpand">
       <Shrink v-if="!state.expand" class="icon"></Shrink>
       <Expand v-if="state.expand" class="icon"></Expand>
-      <span class="text">如何開始遊戲</span>
+      <span class="text">按蹲下（Shift）會切換輸入法導致無法控制</span>
     </div>
     <div v-if="state.expand" class="content">
-      <div class="step">下載客戶端檔案之後解壓縮，執行 Minecraft.exe 即可開始遊戲。</div>
+      <div class="step">在 Windows 10 中按下左邊 Shift 會切換輸入法，導致在遊戲中無法控制。</div>
+      <div class="step">比較建議的解法是將左邊 Shift 切換輸入法的快捷鍵取消。</div>
+      <div class="step">
+        Step 1：在開始列右下角的輸入法圖示點滑鼠右鍵，選擇內容。
+        <img class="img" src="@/assets/img/shift_step1.png" />
+      </div>
+      <div class="step">
+        Step 2：上方選擇進階後點選"使用左側 Shift 鍵"，下方選擇"無"，最後按確定即可。
+        <img class="img" src="@/assets/img/shift_step2.png" />
+      </div>
+      <div class="step">之後仍可使用右側 Shift 鍵區換輸入法，只是需要點時間習慣。</div>
     </div>
   </div>
 </template>
@@ -17,7 +27,7 @@ import Shrink from '@/components/icons/Shrink.vue';
 import Expand from '@/components/icons/Expand.vue';
 
 export default defineComponent({
-  name: 'StartGame',
+  name: 'Shift',
   components: { Shrink, Expand },
   setup() {
     const state = reactive({
@@ -39,7 +49,7 @@ export default defineComponent({
 @import '@/assets/css/breakpoint.scss';
 @import '@/assets/css/theme.scss';
 
-.start-game {
+.shift {
   padding: 10px 15px;
   color: theme(indigo);
   background-color: theme(white);
@@ -70,6 +80,13 @@ export default defineComponent({
     .text {
       display: inline-block;
       vertical-align: middle;
+    }
+
+    .text {
+      width: calc(100% - 24px);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 

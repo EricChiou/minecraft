@@ -19,7 +19,7 @@ import Shrink from '@/components/icons/Shrink.vue';
 import Expand from '@/components/icons/Expand.vue';
 
 export default defineComponent({
-  name: 'StartGame',
+  name: 'Lag',
   components: { Shrink, Expand },
   setup() {
     const state = reactive({
@@ -92,7 +92,7 @@ export default defineComponent({
 
       .img {
         display: block;
-        width: 100%;
+        max-width: 100%;
       }
     }
   }
