@@ -1,5 +1,5 @@
 # minecarft   
-Demo: https://www.calicomoomoo.ml/minecraft/
+Demo: https://www.calicomoomoo.com/minecraft/
 
 ## Project setup
 ```

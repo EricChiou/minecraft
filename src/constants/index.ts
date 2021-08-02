@@ -2,8 +2,8 @@
 /* eslint-disable quotes */
 
 export default class {
-  public static readonly MAP_URL = 'https://www.calicomoomoo.ml/minecraft-map/';
-  public static readonly CLIENT_FILE_URL = 'https://www.calicomoomoo.ml/file/minecraft/Minecraft.zip';
+  public static readonly MAP_URL = 'https://www.calicomoomoo.com/minecraft-map/';
+  public static readonly CLIENT_FILE_URL = 'https://www.calicomoomoo.com/file/minecraft/Minecraft.zip';
 
   public static readonly MODS = [
     {
