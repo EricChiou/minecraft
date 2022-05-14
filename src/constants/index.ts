@@ -8,27 +8,19 @@ export default class {
   public static readonly MODS = [
     {
       logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/190/975/64/64/636857615673605328.png',
-      engName: 'Ice and Fire: Dragons',
-      chtName: '冰與火：龍',
-      description: '增加多種奇幻史詩生物，如龍、獨眼巨人、九頭蛇等等，適合喜愛冒險的玩家。',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/ice-and-fire-dragons',
-    },
-    {
-      logoUrl:
         'https://media.forgecdn.net/avatars/thumbnails/156/655/64/64/636640433174784536.png',
       engName: 'Industrial Foregoing',
       chtName: '工業先鋒',
-      description: '增加了各種種植、飼養、收割或收穫等機器，適合喜歡工業類型模組的玩家。',
+      description: '增加了各種種植、飼養、收割和收穫等機器，適合喜歡工業類型模組的玩家。',
       curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/industrial-foregoing',
     },
     {
       logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/368/428/64/64/637536684071999021.png',
-      engName: 'SimpleRail',
-      chtName: '簡易鐵路',
-      description: '自製模組，新增各種功能的鐵軌以及連結礦車功能。',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/simplerail',
+        'https://media.forgecdn.net/avatars/thumbnails/15/804/64/64/635634024622309024.png',
+      engName: 'Project Red',
+      chtName: '紅石計畫',
+      description: '增加了各種紅石元件，包含各種邏輯閘，適合喜歡製作紅石機關的玩家。',
+      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/project-red-core',
     },
     {
       logoUrl:
@@ -41,51 +33,27 @@ export default class {
     },
     {
       logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/42/418/64/64/636008504954894502.png',
-      engName: 'Waystones',
-      chtName: '傳送石碑',
-      description: '添加了一種啟動之後可以傳送玩家的石碑，免去長途跋涉的煩惱。',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/waystones',
+        'https://media.forgecdn.net/avatars/thumbnails/368/428/64/64/637536684071999021.png',
+      engName: 'SimpleRail',
+      chtName: '簡易鐵路',
+      description: '自製模組，新增各種功能的鐵軌以及連結礦車功能。',
+      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/simplerail',
     },
     {
       logoUrl:
         'https://media.forgecdn.net/avatars/thumbnails/282/982/64/64/637291386660598189.png',
       engName: "Plato's Transporters",
       chtName: '柏拉圖的運輸者',
-      description: '自己組裝自己的交通工具吧！不論是海上的船艦或是空中的飛艇皆能組裝。',
+      description: '自己組裝自己的交通工具吧！不論是海上的船艦或是空中的飛艇都能組裝。',
       curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/platos-transporters',
-    },
-    {
-      logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/339/727/64/64/637480477342407003.png',
-      engName: 'AstikorCarts',
-      chtName: '阿斯蒂克推車',
-      description: '各種貨運馬車，讓你一次能搬運更多物品。',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/astikorcarts',
     },
     {
       logoUrl:
         'https://media.forgecdn.net/avatars/thumbnails/109/667/64/64/636381413501970578.png',
       engName: 'Useful Backpacks',
       chtName: '實用背包',
-      description: '添加了 3 種等級的背包，讓玩家能夠攜帶更多物品。',
+      description: '添加了３種等級的背包，讓玩家能夠攜帶更多物品。',
       curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/useful-backpacks',
-    },
-    {
-      logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/290/102/64/64/637317604265655624.png',
-      engName: "Miner's Helmet",
-      chtName: '礦工頭盔',
-      description: '增加了會發光的頭盔，讓玩家在黑暗的洞穴中更加方便。',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/miners-helmet',
-    },
-    {
-      logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/199/901/64/64/636909850537954133.png',
-      engName: 'Spartan Shields',
-      chtName: '斯巴達盾牌',
-      description: '增加多種盾牌，讓戰鬥更加激烈。',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/spartan-shields',
     },
     {
       logoUrl:
@@ -94,6 +62,22 @@ export default class {
       chtName: '小龍蝦先生的傢俱模組',
       description: '添加了各式各樣的室內傢俱，適合喜歡室內裝潢的玩家。',
       curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/mrcrayfish-furniture-mod',
+    },
+    {
+      logoUrl:
+        'https://media.forgecdn.net/avatars/thumbnails/283/502/64/64/637293378577363646.png',
+      engName: "FurbishCraft",
+      chtName: '毛絨工藝',
+      description: '更多的室內傢俱。',
+      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/furbishcraft',
+    },
+    {
+      logoUrl:
+        'https://media.forgecdn.net/avatars/thumbnails/19/465/64/64/635695679965732511.png',
+      engName: 'Cooking for Blockheads',
+      chtName: '傻瓜烹飪',
+      description: '增加了各種廚房用具。',
+      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/cooking-for-blockheads',
     },
     {
       logoUrl:
@@ -113,35 +97,27 @@ export default class {
     },
     {
       logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/19/465/64/64/635695679965732511.png',
-      engName: 'Cooking for Blockheads',
-      chtName: '傻瓜烹飪',
-      description: '增加各主廚具。',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/cooking-for-blockheads',
-    },
-    {
-      logoUrl:
         'https://media.forgecdn.net/avatars/thumbnails/237/234/64/64/637098539787193844.jpeg',
-      engName: "Macaw's Mods",
-      chtName: 'Macaw 的各種模組',
-      description: '各種建築模組，有橋、窗戶、門、地板門、傢俱、斜面屋頂和柵欄等等。',
+      engName: "Macaw's Bridges",
+      chtName: 'Macaw 的橋梁',
+      description: '建築模組，增加各種橋梁。',
       curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/macaws-bridges',
     },
     {
       logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/230/320/64/64/637059909042064016.png',
-      engName: 'Aquaculture 2',
-      chtName: '水產養殖',
-      description: '新增多種魚類、水生動物、食物及裝備，讓釣魚不再單調。',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/aquaculture',
+        'https://media.forgecdn.net/avatars/thumbnails/303/442/64/64/637372493411502504.jpeg',
+      engName: "Macaw's Doors",
+      chtName: 'Macaw 的門',
+      description: '建築模組，增加各種門。',
+      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/macaws-doors',
     },
     {
       logoUrl:
-        'https://media.forgecdn.net/avatars/thumbnails/109/514/64/64/636380307126307812.png',
-      engName: 'Carry On',
-      chtName: '搬運',
-      description: '搬箱子、搬動物、搬、搬、搬！',
-      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/carry-on',
+        'https://media.forgecdn.net/avatars/thumbnails/427/429/64/64/637659138096952962.png',
+      engName: "Macaw's Windows",
+      chtName: 'Macaw 的窗',
+      description: '建築模組，增加各種窗戶。',
+      curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/macaws-windows',
     },
     {
       logoUrl: 'https://media.forgecdn.net/avatars/thumbnails/5/810/64/64/635351434144199284.png',
@@ -154,7 +130,7 @@ export default class {
       logoUrl: 'https://media.forgecdn.net/avatars/thumbnails/32/426/64/64/635880235078234387.jpeg',
       engName: 'Inventory Sorter',
       chtName: '庫存整理',
-      description: '點擊滑鼠中鍵，方便玩家整理背包或箱子。',
+      description: '點擊滑鼠中鍵，方便玩家整理背包和箱子。',
       curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/inventory-sorter',
     },
     {
@@ -168,7 +144,7 @@ export default class {
       logoUrl: 'https://media.forgecdn.net/avatars/thumbnails/4/608/64/64/635351426949975481.png',
       engName: 'Morpheus',
       chtName: '',
-      description: '假設所有玩家都處於睡眠狀態，則會直接天亮。',
+      description: '當所有玩家處於睡眠狀態時，直接天亮。',
       curseforgeLink: 'https://www.curseforge.com/minecraft/mc-mods/morpheus',
     },
     {
